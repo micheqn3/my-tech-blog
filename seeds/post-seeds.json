@@ -1,0 +1,25 @@
+[
+    {
+      "title": "I love ORM",
+      "body": "ORM's makes SQL queries so much easier!"
+
+    },
+    {
+        "title": "JavaScript is the superior language!",
+        "body": "I know C++ and compared to JavaSscript, Jacascript is the superior language."
+  
+    },
+    {
+        "title": "Back-end is necessary",
+        "body": "Learning back-end really makes you delve into JavaScript more and makes client-side JS stronger too."
+  
+    },
+    {
+        "title": "Curious about React",
+        "body": "I heard awesome things about React framework...should I start it?"
+  
+    }
+]
+
+
+  
