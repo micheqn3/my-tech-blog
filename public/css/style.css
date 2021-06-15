@@ -1,3 +1,4 @@
+/**** Global styling ****/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 * {
@@ -8,10 +9,6 @@
 
 html, body {
     height: 100%;
-    /*
-    height: 100vh;
-    width: 100vw;
-    */
 }
 
 html {
@@ -40,12 +37,12 @@ nav {
 }
 
 .main-container {
-    padding-top: 100px;
-    margin: 2rem;
+    padding-top: 100px; /* Need media query for this for lg screens */
+    padding-bottom: 100px;
+    margin: 2rem; 
 }
 
-
-/* Card styles */
+/**** Card styles ****/
 .my-card {
     display: flex;
     flex-direction: column;
@@ -71,7 +68,7 @@ nav {
 }
 
 .my-card p {
-    position: relative;
+    position: relative; 
     margin: 1rem 0 0;
 }
 
@@ -105,4 +102,74 @@ nav {
       flex-direction: row;
       max-width: 800px;
     }
+}
+
+/**** Log in styles ****/
+.log-sign-title {
+    padding-top: 30px;
+}
+.green-btn {
+    background-color: #fff;
+    color: #2E8B57;
+    outline-style: solid;
+}
+
+.green-btn:hover {
+    background-color: #2E8B57;
+    color: white;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.a-link {
+    color: black;
+    padding-left: 8%;
+}
+
+/**** Dashboard styles ****/
+.dash-container {
+    padding-top: 70px;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.dash-title {
+    font-size: 20px;
+}
+
+.btn-container{
+    text-align: center;
+}
+
+.postBtn{
+    background-color: #fff;
+    color: #2E8B57;
+    outline-style: solid;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+  
+a.postBtn:hover {
+    background-color: #2E8B57;
+    color: white;
+    outline-style: none;
 }
