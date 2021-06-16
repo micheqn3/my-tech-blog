@@ -5,9 +5,9 @@ const withAuth = require('.././utils/auth')
 // /dash routes
 
 // Goes to the create post screen
-router.get('/create', (req, res) => {
+router.get('/create', withAuth, (req, res) => {
     res.render('create-post', {
-        loggedIn: req.session.loggedIn
+        loggedIn: true
     });
 })
 

@@ -13,30 +13,14 @@ router.post('/', async (req, res) => {
             body: req.body.body,
             user_id: req.session.userID
         })
-        console.log(req.session.userID);
-        console.log(req.body.title)
-        console.log(req.body.body)
-
         res.status(200).json({message: "Post created!"});
-
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error);
     }
 })
 
-/*
-router.post('/', withAuth, (req, res) => {
-    Post.create({
-            title: req.body.title,
-            body: req.body.body,
-            user_id: req.session.userID
-        })
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-*/
+// Delete post 
+
+// Update post
 
 module.exports = router;

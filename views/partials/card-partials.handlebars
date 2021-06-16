@@ -1,11 +1,11 @@
 <div class="my-card hoverable">
-    <div class="post">
-          <h1 class="p-title">{{ title }}</h1>
-          <h2 class="p-user">{{ user.userName }}</h2>
-          <p> {{ body }} </p>
-          <p class="comment">
-            <a href="#">Comment<i class="far fa-comment"></i></a>
-          </p>
-          <p>Date: {{ get_date updated_at}}</p>
-    </div> 
+  <div class="post">
+    <a href="/post/{{id}}"><h1 class="p-title">{{title}}</h1></a> <!-- Route to view post -->
+    <h2 class="p-user">{{ user.userName }}</h2>
+    <p> {{ body }} </p>
+  <div class="comment">
+      <a href="/comment/{{id}}">Comment<i class="far fa-comment"></i></a> <!-- Also route to view post  -->
+  </div>
+    <p>Date: {{ get_date updated_at}}</p>
+  </div>  
 </div>

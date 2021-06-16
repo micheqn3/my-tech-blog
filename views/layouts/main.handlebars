@@ -22,7 +22,7 @@
                 {{#if loggedIn}}
                     <li><a id="logOutBtn">Log Out</a></li>
                 {{else}}
-                    <li><a href="/login">Log In</a></li>
+                    <li><a href="/login">Login</a></li>
                 {{/if}}
               </ul>
               <a href="/" class="brand-logo center">The Tech Blog</a>
@@ -33,14 +33,16 @@
             <li><a href="/dash">Dashboard</a></li>
             {{#if loggedIn}}
                     <li><a id="logOutBtn">Log Out</a></li>
-            {{else}}
-                    <li><a href="/login">Log In</a></li>
+                {{else}}
+                    <li><a href="/login">Login</a></li>
             {{/if}}
         </ul>
     </div>
 
     {{{ body }}}
 
-    <script src="/js/login-signup.js"></script>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>

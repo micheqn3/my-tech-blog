@@ -177,3 +177,24 @@ a.postBtn:hover {
 .d-link {
     color: black;
 }
+
+/**** Single post styles ****/
+.single-container {
+    padding-top: 150px; /* Need media query for this for lg screens */
+    padding-bottom: 100px;
+    margin: 2rem; 
+}
+
+/**** Adding comment styles ****/
+textarea {
+    padding: 20px;
+    height: 200px;
+    border-style: none solid solid none;
+    transition: background-color 0.3s ease 0s;
+    background-color: #fff;
+}
+  
+textarea:focus {
+    background: none repeat scroll 0 0 #ffffff;
+    outline-width: 0;
+}

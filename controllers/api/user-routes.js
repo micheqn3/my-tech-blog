@@ -38,7 +38,6 @@ router.post('/login', async (req, res) => {
             } else {
                 req.session.save(() => {
                     req.session.loggedIn = true;
-                    req.session.userID = d.id;
                     res.status(200).json({message: "Successful log in!"});
 
                 })
