@@ -42,6 +42,15 @@ nav {
     margin: 2rem; 
 }
 
+.firstnav {
+    margin-top: 30%;
+}
+
+.head-title {
+    font-size: 30px;
+    padding-right: 120px;
+}
+
 /**** Card styles ****/
 .my-card {
     display: flex;
@@ -101,6 +110,12 @@ nav {
     .my-card {
       flex-direction: row;
       max-width: 800px;
+    }
+}
+
+@media (max-width:415px)  { 
+    .head-title {
+        font-size: 25px;
     }
 }
 
