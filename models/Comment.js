@@ -6,10 +6,10 @@ class Comment extends Model {}
 Comment.init(
     {
     id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4, // Use Sequelize's UUID functionality to generate a unique number
+        type: DataTypes.INTEGER,
         allowNull: false, 
         primaryKey: true,
+        autoIncrement: true
     },
     body: {
         type: DataTypes.STRING,
@@ -24,7 +24,7 @@ Comment.init(
       },
     
     post_id: { // References the Post model's ID. This comment belongs to a Post.
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         references: {
             model: 'post',
             key: 'id',

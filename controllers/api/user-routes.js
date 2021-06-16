@@ -3,6 +3,16 @@ const User = require("../../models/User");
 
 // /api/user routes 
 
+// Route to get all users
+router.get('/', async (req, res) => {
+    try {
+        const d = await User.findAll();
+        res.status(200).json(d)
+    } catch(error) {
+        res.status(500).json(error)
+    }
+})
+
 // Create a new user 
 router.post('/', async (req, res) => {
     try {
@@ -38,8 +48,8 @@ router.post('/login', async (req, res) => {
             } else {
                 req.session.save(() => {
                     req.session.loggedIn = true;
+                    req.session.userID = d.id;
                     res.status(200).json({message: "Successful log in!"});
-
                 })
             }
         }

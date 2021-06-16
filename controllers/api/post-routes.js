@@ -4,8 +4,17 @@ const withAuth = require('../../utils/auth')
 
 // /api/post routes
 
-// Create new post 
+// Route to get all posts
+router.get('/', async (req, res) => {
+    try {
+        const d = await Post.findAll();
+        res.status(200).json(d)
+    } catch(error) {
+        res.status(500).json(error)
+    }
+})
 
+// Create new post 
 router.post('/', async (req, res) => {
     try {
         const d = await Post.create({

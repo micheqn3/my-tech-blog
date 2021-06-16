@@ -5,25 +5,24 @@ $("#addCommentBtn").on('click', async (e) => {
     const postID = window.location.toString().split('/')[ // Retrieves the post ID from the window
         window.location.toString().split('/').length - 1
     ];
-    let comment = $("#commentText").val().trim();
-    if (comment === "") {
+    let body = $("#commentText").val().trim();
+    if (body === "") {
         alert("All values need to be filled.")
     } else {
         const response = await fetch('/api/comment', {
           method: 'POST',
           body: JSON.stringify({
-          comment,
+          body,
           postID
         }),
         headers: {
           "Content-Type": "application/json"
         }
         });
-    
         if (response.ok) {
           document.location.replace('/');
         } else {
           alert("Comment could not be created.");
-        } 
+      } 
     }
 })

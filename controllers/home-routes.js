@@ -64,6 +64,13 @@ router.get('/post/:id', async (req, res) => {
                 model: Comment,
                 as: "comments",
                 attributes: ["id", "body", 'updated_at'],
+                include: [
+                    {
+                        model: User,
+                        as: 'user',
+                        attributes: ["userName"] // Adding this to be able to access userName in view-comments-partials
+                    }
+                ]
               },
             ],
         })
@@ -99,6 +106,13 @@ router.get('/comment/:id', withAuth, async (req, res) => {
                 model: Comment,
                 as: "comments",
                 attributes: ["id", "body", 'updated_at'],
+                include: [
+                    {
+                        model: User,
+                        as: 'user',
+                        attributes: ["userName"] // Adding this to be able to access userName in view-comments-partials
+                    }
+                ]
               },
             ],
         })
