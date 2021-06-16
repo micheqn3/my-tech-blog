@@ -37,7 +37,7 @@ nav {
 }
 
 .main-container {
-    padding-top: 100px; /* Need media query for this for lg screens */
+    padding-top: 60px; /* Need media query for this for lg screens */
     padding-bottom: 100px;
     margin: 2rem; 
 }
@@ -130,15 +130,15 @@ nav {
 }
 
 /**** Dashboard styles ****/
-.dash-container {
-    padding-top: 70px;
+.center-container {
+    padding-top: 40px;
     margin: 2rem;
     display: flex;
     justify-content: center;
 }
 
 .dash-title {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .btn-container{
@@ -172,4 +172,8 @@ a.postBtn:hover {
     background-color: #2E8B57;
     color: white;
     outline-style: none;
+}
+
+.d-link {
+    color: black;
 }

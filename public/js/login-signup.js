@@ -7,26 +7,27 @@ const postUserData = async (e) => {
     let email = $("#email").val().trim();
 
     if (userName === "" || password === "" || email === "") {
-        alert("All values need to be filled.")
-    } else {
+
+      alert("All values need to be filled.");
+      } else {
         const response = await fetch('/api/user', {
-            method: 'POST',
-            body: JSON.stringify({
-              userName,
-              password,
-              email
-            }),
-            headers: {
-              "Content-Type": "application/json"
-            }
-          });
-        
-          if (response.ok) {
-            document.location.replace('/');
-          } else {
-            alert("Invalid password or email. Please try again.")
-        } 
-    }
+
+          method: 'POST',
+          body: JSON.stringify({
+            userName,
+            password,
+            email
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+        if (response.ok) {
+          document.location.replace('/');
+        } else {
+          alert("Invalid password or email. Please try again.")
+      } 
+  }
 }
 
 const userLogIn = async (e) => {

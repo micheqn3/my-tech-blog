@@ -18,11 +18,11 @@
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
               <ul class="left hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/dash">Dashboard</a></li>
                 {{#if loggedIn}}
                     <li><a id="logOutBtn">Log Out</a></li>
                 {{else}}
-                    <li><a href="/login">Login</a></li>
+                    <li><a href="/login">Log In</a></li>
                 {{/if}}
               </ul>
               <a href="/" class="brand-logo center">The Tech Blog</a>
@@ -30,16 +30,16 @@
         </nav>
         <ul class="sidenav" id="mobile-demo">
             <li><a href="/">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/dash">Dashboard</a></li>
+            {{#if loggedIn}}
+                    <li><a id="logOutBtn">Log Out</a></li>
+            {{else}}
+                    <li><a href="/login">Log In</a></li>
+            {{/if}}
         </ul>
     </div>
 
     {{{ body }}}
-
-    {{#if loggedIn}}
-    <p>Hellooooooo</p>
-    {{/if}}
 
     <script src="/js/login-signup.js"></script>
 </body>

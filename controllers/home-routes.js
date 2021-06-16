@@ -1,12 +1,26 @@
 const router = require('express').Router();
-const Post = require('../models/Post');
+const {Post, User, Comment} = require('../models/');
 
 // / routes 
 
 // Gets all posts from the db and shows on home page
 router.get('/', async (req, res) => {
     try {
-        const data = await Post.findAll();
+        const data = await Post.findAll({
+            attributes: ["id", "title", "body", "user_id", "updated_at"],
+            include: [
+              {
+                model: User,
+                as: "user",
+                attributes: ["userName"],
+              },
+              {
+                model: Comment,
+                as: "comments",
+                attributes: ["id", "body", 'updated_at'],
+              },
+            ],
+        })
         const posts = data.map((item) => item.get({ plain: true })); // Iterates over each array item to get plain object instead of sequelize object
         res.render('home', {
             posts,
@@ -19,6 +33,10 @@ router.get('/', async (req, res) => {
 
 // Goes to the log in screen 
 router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
     res.render('login');
 })
 
@@ -27,9 +45,9 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 })
 
-// Goes to the dashboard
-router.get('/dashboard', (req, res) => {
-    res.render('dashboard');
-})
+// Gets a post 
+
+// Gets a comment
+
 
 module.exports = router;

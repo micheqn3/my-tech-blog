@@ -11,8 +11,9 @@ router.post('/', async (req, res) => {
             email: req.body.email,
             password: req.body.password
         });
-        req.session.save(() => { // Sets req.session variable loggedIn to true 
+        req.session.save(() => { // Sets req.session variable loggedIn to true and userID to the User model's ID
             req.session.loggedIn = true;
+            req.session.userID = d.id;
             res.status(200).json(d);
         })
     } catch (error) {
@@ -37,6 +38,7 @@ router.post('/login', async (req, res) => {
             } else {
                 req.session.save(() => {
                     req.session.loggedIn = true;
+                    req.session.userID = d.id;
                     res.status(200).json({message: "Successful log in!"});
 
                 })

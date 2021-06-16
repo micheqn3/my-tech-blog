@@ -1,4 +1,7 @@
-[
+// Seeds for post table
+const Post = require('../models/Post')
+
+const postD= [
     {
       "title": "I love ORM",
       "body": "ORM's makes SQL queries so much easier! My favorite one is Sequelize because I love objects!",
@@ -20,10 +23,12 @@
     {
         "title": "Curious about React",
         "body": "I heard awesome things about React framework...should I start it? Didn't one of the big tech companies create this framework?",
-        "user_id": 1
+        "user_id": 2
   
     }
 ]
 
 
+const seedPosts = () => Post.bulkCreate(postD);
   
+module.exports = seedPosts;
