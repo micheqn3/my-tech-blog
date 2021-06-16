@@ -186,6 +186,9 @@ a.postBtn:hover {
     margin: 2rem; 
 }
 
+.time {
+    padding-bottom: 10%;
+}
 /**** Adding comment styles ****/
 textarea {
     padding: 20px;

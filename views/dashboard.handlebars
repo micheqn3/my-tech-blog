@@ -5,8 +5,11 @@
 </div>
 <div class="main-container"> <!-- Card container for dashboard --> 
     {{#each posts as |post| }}
-    {{> dash-card-partials }}     <!-- Need to get only posts from logged in user -->
+    {{> dash-card-partials }}    
     {{/each}}
+    <div class='btn-container'>
+        <a href="/dash/create" class="postBtn"><i class="material-icons left">add</i>New Post</a>
+    </div>
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 })
 
 // Create new post 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const d = await Post.create({
             title: req.body.title,
@@ -29,6 +29,24 @@ router.post('/', async (req, res) => {
 })
 
 // Delete post 
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const d = await Post.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        if(!d) {
+            res.status(404).json({message: "Could not find post with this ID!"});
+        } else {
+            res.status(200).json({message: "Post deleted!"});
+        }
+
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 
 // Update post
 

@@ -2,9 +2,7 @@
 
 $("#addCommentBtn").on('click', async (e) => {
     e.preventDefault();
-    const postID = window.location.toString().split('/')[ // Retrieves the post ID from the window
-        window.location.toString().split('/').length - 1
-    ];
+    const postID = window.location.toString().split('/')[window.location.toString().split('/').length - 1]; // Retrieves the post ID from the window
     let body = $("#commentText").val().trim();
     if (body === "") {
         alert("All values need to be filled.")
