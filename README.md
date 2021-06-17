@@ -7,6 +7,8 @@ handlebars.js as the template engine, express-session for authentication, and bc
 
 ### Link to deployed application
 
+https://my-tech-blog-micheqn3.herokuapp.com/
+
 ### Installing locally
 
 1. Make sure you have Node.js to run the application
@@ -16,11 +18,10 @@ handlebars.js as the template engine, express-session for authentication, and bc
 3. Install the NPM packages
 > npm install
 4. Provide your MySQL credentials in an .env file and make sure your MySQL server is running
-5. Create the database in MySQL using the schema found in db/ schema.sql
-6. Run the application in command line 
+5. Run the application in command line 
 > node server.js
-7. View the application in the browser as it is hosted locally
-> http://localhost:3001/
+6. View the application in the browser as it is hosted locally
+> `http://localhost:3001/`
 
 ### This repository contains: 
 
@@ -37,6 +38,17 @@ handlebars.js as the template engine, express-session for authentication, and bc
   - MySQL2
   - Nodemon
   - Dotenv
+
+### Screenshot of pages
+
+Log In            |  Viewing a Post
+:-------------------------:|:-------------------------: 
+![Log in page](/Assets/login.png)  |  ![One post](/Assets/post.png). 
+
+Home Page
+:-------------------------:
+![Home page](/Assets/homepage.png)
+
 
 
 ### License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
