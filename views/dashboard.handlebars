@@ -17,7 +17,10 @@
     <h2 class="dash-p-c">My Comments</h2>
     {{#each posts as |post| }} <!-- Displays all user comments -->
     {{#each comments as |comment|}}
-    {{> view-my-comments-partials }}   
+    <div class="btn-container">
+        <a href="/comment/update/{{id}}" class="waves-effect waves-light btn-small grey lighten-4 black-text">Edit</a>
+    </div>
+    {{> view-comments-partials }}   
     {{/each}}
     {{/each}}
     <div class='btn-container'>

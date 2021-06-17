@@ -131,4 +131,34 @@ router.get('/comment/:id', withAuth, async (req, res) => {
     }
 })
 
+
+router.get('/comment/get/:id', withAuth, async (req, res) => {
+    try {
+        const d = await Comment.findOne({ 
+            where: {
+                id: req.params.id
+            },
+            // attributes: ["id", "title", "body", "user_id", "updated_at"],
+            include: [
+              {
+                model: User,
+                as: "user",
+                attributes: ["userName"],
+              },
+            ],
+        })
+        if (!d) {
+            res.status(404).json({ message: 'There are no posts found with this ID!' });
+        } else {
+            const data = d.get({plain: true}); // Will show comment to the user
+            console.log(data)
+            res.send('testing')
+  
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
+
+
 module.exports = router;
