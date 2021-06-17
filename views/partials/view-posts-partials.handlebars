@@ -4,7 +4,7 @@
     <h2 class="p-user">{{ user.userName }}</h2>
     <p> {{ body }} </p>
   <div class="comment">
-      <a href="/comment/{{id}}">Comment<i class="far fa-comment"></i></a> <!-- Also route to view post  -->
+      <a href="/comment/{{id}}">Comment(s)  {{comments.length}}<i class="far fa-comment"></i></a> <!-- Also route to view post  -->
   </div>
     <p>Date: {{ get_date updated_at}}</p>
   </div>  

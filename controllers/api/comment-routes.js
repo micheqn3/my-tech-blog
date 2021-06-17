@@ -14,6 +14,8 @@ router.get('/', async (req, res) => {
     }
 })
 
+// Route
+
 // Add comment
 router.post('/', withAuth, async (req, res) => {
     try {

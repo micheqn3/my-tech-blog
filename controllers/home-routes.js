@@ -28,7 +28,6 @@ router.get('/', async (req, res) => {
             posts,
             loggedIn: req.session.loggedIn
         })
-        console.log(posts) // testing
     } catch (error) {
         res.status(500).json(error);
     }
@@ -113,7 +112,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
                     {
                         model: User,
                         as: 'user',
-                        attributes: ["userName"] // Adding this to be able to access userName in view-comments-partials
+                        attributes: ["userName"] 
                     }
                 ]
               },
@@ -132,9 +131,5 @@ router.get('/comment/:id', withAuth, async (req, res) => {
         res.status(500).json(error);
     }
 })
-
-
-// Gets one of the user's comments. Needs authorization to view, update, and delete individual comment
-
 
 module.exports = router;

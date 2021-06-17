@@ -4,13 +4,11 @@
     <h2 class="p-user">{{ user.userName }}</h2>
     <p> {{ body }} </p>
   <div class="comment">
-      <a href="/comment/{{id}}">Comment<i class="far fa-comment"></i></a> <!-- Also route to view post  -->
+      <a href="/comment/{{id}}">Comment(s)  {{comments.length}}<i class="far fa-comment"></i></a> <!-- Also route to view post  -->
   </div>
     <p class="time">Date: {{ get_date updated_at}}</p> 
-    {{#if passThisToView}} <!-- Variable passed in here from view-comments. Checking if the user is logged in to update or delete comment -->
     <a id="updateBtn" class="waves-effect waves-light btn-small grey lighten-4 black-text">Update</a>
     <a id="deleteBtn" class="waves-effect waves-light btn-small grey lighten-4 black-text">Delete</a>
-    {{/if}}
   </div>  
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
