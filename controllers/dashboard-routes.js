@@ -13,9 +13,9 @@ router.get('/create', withAuth, (req, res) => {
 })
 
 // Goes to the update post screen and fills out existing post data
-// dash/update/:id
+// dash/update/post/:id
 
-router.get('/update/:id', withAuth, async (req, res) => {
+router.get('/update/post/:id', withAuth, async (req, res) => {
     try {
         const data = await Post.findOne({
             where: {
@@ -28,6 +28,26 @@ router.get('/update/:id', withAuth, async (req, res) => {
             posts
         })
 
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
+
+// Goes to the update comment screen and fills out existing comment data
+// dash/update/post/:id
+
+router.get('/update/comment/:id', withAuth, async (req, res) => {
+    try {
+        const data = await Comment.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        const posts = data.get({plain: true});
+        res.render('update-comment', {
+            loggedIn: req.session.loggedIn,
+            posts
+        })
     } catch (error) {
         res.status(500).json(error);
     }

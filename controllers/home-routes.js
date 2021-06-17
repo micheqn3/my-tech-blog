@@ -151,9 +151,10 @@ router.get('/comment/get/:id', withAuth, async (req, res) => {
             res.status(404).json({ message: 'There are no posts found with this ID!' });
         } else {
             const data = d.get({plain: true}); // Will show comment to the user
-            console.log(data)
-            res.send('testing')
-  
+            res.render('view-comment', {
+                data,
+                loggedIn: req.session.loggedIn
+            })
         }
     } catch (error) {
         res.status(500).json(error);

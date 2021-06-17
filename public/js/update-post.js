@@ -1,4 +1,4 @@
-/* JS file handles client side for updating posts */
+/* JS file handles client side for updating and deleting posts  */
 
 $("#updatePost").on('click', async (e) => {
     e.preventDefault();
@@ -25,6 +25,19 @@ $("#updatePost").on('click', async (e) => {
             alert('Could not update the post!')
         }
     }
+})
+
+$("#deleteBtn").on('click', async (e) => {
+    e.preventDefault();
+    const postID = window.location.toString().split('/')[window.location.toString().split('/').length - 1]; // Retrieves the post ID from the window
+    const response = await fetch(`/api/post/delete/${postID}`, {
+        method: 'DELETE',
+    })
+    if (response.ok) {
+        document.location.replace('/dash');
+      } else {
+        alert("Post could not be deleted.");
+    } 
 })
 
 M.textareaAutoResize($('#title')); // Resizes text area for a lot of text

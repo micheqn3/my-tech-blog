@@ -8,7 +8,7 @@
     {{#each posts as |post| }} <!-- Displays all user posts -->
     {{#each posts}}
     <div class="btn-container">
-        <a href="/dash/update/{{id}}" class="waves-effect waves-light btn-small grey lighten-4 black-text">Edit</a>
+        <a href="/dash/update/post/{{id}}" class="waves-effect waves-light btn-small grey lighten-4 black-text">Edit</a> <!-- Goes to update post screen -->
     </div>
     {{> view-posts-partials }}  
     {{/each}}
@@ -18,7 +18,7 @@
     {{#each posts as |post| }} <!-- Displays all user comments -->
     {{#each comments as |comment|}}
     <div class="btn-container">
-        <a href="/comment/update/{{id}}" class="waves-effect waves-light btn-small grey lighten-4 black-text">Edit</a>
+        <a href="/dash/update/comment/{{id}}" class="waves-effect waves-light btn-small grey lighten-4 black-text">Edit</a> <!-- Goes to update comment screen -->
     </div>
     {{> view-comments-partials }}   
     {{/each}}

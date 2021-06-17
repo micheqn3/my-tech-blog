@@ -1,6 +1,6 @@
 <div class="my-card hoverable"> <!-- Partial for viewing every comment without delete/update options -->
     <div class="post">
-        <h2 class="c-user">{{ user.userName }}</h2>
+        <a href="/comment/get/{{id}}"><h1 class="p-title">{{user.userName}}</h1></a> <!-- Route to view comment -->
         <p> {{ body }} </p>
         <p>Date: {{ get_date updated_at}}</p>
     </div>  
