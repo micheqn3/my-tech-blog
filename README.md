@@ -43,7 +43,7 @@ https://my-tech-blog-micheqn3.herokuapp.com/
 
 Log In            |  Viewing a Post
 :-------------------------:|:-------------------------: 
-![Log in page](/Assets/login.png)  |  ![One post](/Assets/post.png). 
+![Log in page](/Assets/login.png)  |  ![One post](/Assets/post.png)
 
 Home Page
 :-------------------------:
