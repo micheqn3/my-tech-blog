@@ -1,6 +1,6 @@
 <div class="single-container"> <!-- Card container for one post -->
-    {{> individual-dash-partials data}}
-    {{#if loggedIn}}    <!-- Shows comment box if the user is logged in -->
+    {{> individual-dash-partials data passThisToView=loggedIn}} <!-- Passing the loggedIn variable into the partial for conditional -->
+    {{#if loggedIn}}  <!-- Shows comment text box if the user is logged in -->
     <div class="my-card">
         <textarea id="commentText" placeholder="Comment"></textarea>
     </div>
@@ -9,14 +9,14 @@
     </div>
     {{/if}} 
     {{#each data.comments as |AllC|}}
-    {{> view-comments-partials AllC}}
+    {{> view-comments-partials AllC }}
     {{/each}}  
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src = "https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/global.js"></script>
     {{#if loggedIn}}
     <script src="/js/add-comment.js"></script>
-    <script src="/js/global.js"></script>
     {{/if}}

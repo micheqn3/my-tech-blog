@@ -194,6 +194,11 @@ a.postBtn:hover {
     color: black;
 }
 
+.dash-p-c {
+    font-size: 20px;
+    text-align: center;
+}
+
 /**** Single post styles ****/
 .single-container {
     padding-top: 150px; /* Need media query for this for lg screens */

@@ -4,7 +4,7 @@ const Post = require('../models/Post')
 const postD= [
     {
       "title": "I love ORM",
-      "body": "ORM's makes SQL queries so much easier! My favorite one is Sequelize because I love object-oriented programming so much!",
+      "body": "ORM's make SQL queries so much easier! My favorite one is Sequelize because I love object-oriented programming so much!",
       "user_id": 1
 
     },

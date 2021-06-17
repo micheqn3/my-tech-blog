@@ -1,14 +1,22 @@
-<div class="center-container">
+<div class="center-container"> <!-- View dashboard --> 
     <div class="dash-title">
         <h4>My Dashboard</h4>
     </div>
 </div>
-<div class="main-container"> <!-- Card container for dashboard --> 
-    {{#each posts as |post| }}
-    {{> dash-card-partials }}    
+<div class="main-container"> 
+    <h2 class="dash-p-c">My Posts</h2>
+    {{#each posts as |post| }} <!-- Displays all user posts -->
+    {{> dash-card-partials }}   
+    {{/each}}
+
+    <h2 class="dash-p-c">My Comments</h2>
+    {{#each posts as |post| }} <!-- Displays all user comments -->
+    {{#each comments as |comment|}}
+    {{> view-my-comments-partials }}   
+    {{/each}}
     {{/each}}
     <div class='btn-container'>
-        <a href="/dash/create" class="postBtn"><i class="material-icons left">add</i>New Post</a>
+        <a href="/dash/create" class="postBtn"><i class="material-icons left">add</i>New Post</a>  
     </div>
 </div>
 

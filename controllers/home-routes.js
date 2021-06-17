@@ -78,6 +78,7 @@ router.get('/post/:id', async (req, res) => {
             res.status(404).json({ message: 'There are no posts found with this ID!' });
         } else {
             const data = d.get({plain: true}); // Will show post to the user. If the user is logged in, will show comment box
+            console.log(data); // testing
             res.render('view-post', {
                 data,
                 loggedIn: req.session.loggedIn
