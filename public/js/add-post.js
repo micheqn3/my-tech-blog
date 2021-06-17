@@ -31,3 +31,4 @@ $("#submitPost").on('click', async (e) => {
 
 M.textareaAutoResize($('#title')); // Resizes text area for a lot of text
 M.textareaAutoResize($('#body'));
+

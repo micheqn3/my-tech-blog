@@ -1,5 +1,4 @@
-/* JS file handles client side for deleting posts */
-// let updateBtn = $("#updateBtn");
+/* JS file handles client side for deleting posts  */
 
 $("#deleteBtn").on('click', async (e) => {
     e.preventDefault();

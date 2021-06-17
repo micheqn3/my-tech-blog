@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
-const withAuth = require('.././utils/auth')
+const withAuth = require('.././utils/auth');
 
 // /dash routes
 
@@ -12,7 +12,28 @@ router.get('/create', withAuth, (req, res) => {
     });
 })
 
-// Gets all user posts 
+// Goes to the update post screen and fills out existing post data
+// dash/update/:id
+
+router.get('/update/:id', withAuth, async (req, res) => {
+    try {
+        const data = await Post.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        const posts = data.get({plain: true});
+        res.render('update-post', {
+            loggedIn: req.session.loggedIn,
+            posts
+        })
+
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
+
+// Gets all user posts and comments and displays on dashboard
 // /dash
 router.get('/', withAuth, async (req, res) => {
     try {
@@ -20,6 +41,7 @@ router.get('/', withAuth, async (req, res) => {
             where: {
                 id: req.session.userID
             },
+            attributes: { exclude: ['password'] },
             include: [
                 {
                     model: Post,
@@ -50,7 +72,6 @@ router.get('/', withAuth, async (req, res) => {
             loggedIn: req.session.loggedIn,
             posts,
         })
-        console.log(posts) // testing
     } catch (error) {
         res.status(500).json(error)
     }
