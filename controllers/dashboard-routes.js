@@ -5,13 +5,15 @@ const withAuth = require('.././utils/auth')
 // /dash routes
 
 // Goes to the create post screen
+// /dash/create
 router.get('/create', withAuth, (req, res) => {
     res.render('create-post', {
-        loggedIn: true
+        loggedIn: req.session.loggedIn
     });
 })
 
 // Gets all user posts 
+// /dash
 router.get('/', withAuth, async (req, res) => {
     try {
         const data = await Post.findAll({
@@ -42,14 +44,12 @@ router.get('/', withAuth, async (req, res) => {
         })
         const posts = data.map((item) => item.get({ plain: true })); // Iterates over each array item to get plain object instead of sequelize object
         res.render('dashboard', {
-            loggedIn: true,
+            loggedIn: req.session.loggedIn,
             posts,
         })
     } catch (error) {
         res.status(500).json(error)
     }
 })
-
-// Edit one user post
 
 module.exports = router;

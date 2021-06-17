@@ -1,5 +1,5 @@
 <div class="single-container"> <!-- Card container for one post -->
-    {{> individual-dash-partials data passThisToView=loggedIn}} <!-- Passing the loggedIn variable into the partial for conditional -->
+    {{> view-my-posts-partials data passThisToView=loggedIn}} <!-- Passing the loggedIn variable into the partial for conditional -->
     {{#if loggedIn}}  <!-- Shows comment text box if the user is logged in -->
     <div class="my-card">
         <textarea id="commentText" placeholder="Comment"></textarea>

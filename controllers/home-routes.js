@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {Post, User, Comment} = require('../models/');
-const withAuth = require('.././utils/auth')
+const withAuth = require('.././utils/auth');
+const sequelize = require('../config/connection');
 
 // / routes 
 
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
               {
                 model: Comment,
                 as: "comments",
-                attributes: ["id", "body", 'updated_at'],
+                attributes: ["id", "body", 'updated_at']
               },
             ],
         })
@@ -27,6 +28,7 @@ router.get('/', async (req, res) => {
             posts,
             loggedIn: req.session.loggedIn
         })
+        console.log(posts) // testing
     } catch (error) {
         res.status(500).json(error);
     }
@@ -89,7 +91,7 @@ router.get('/post/:id', async (req, res) => {
     }
 })
 
-// Shows comment box for posts
+// Route from clicking on 'comment' from the post. Needs authorization to comment
 router.get('/comment/:id', withAuth, async (req, res) => {
     try {
         const d = await Post.findOne({ 
@@ -123,7 +125,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
             const data = d.get({plain: true}); // Will show post to the user
             res.render('view-post', {
                 data,
-                loggedIn: true
+                loggedIn: req.session.loggedIn
             })
         }
     } catch (error) {
@@ -132,7 +134,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
 })
 
 
-// Gets one comment
+// Gets one of the user's comments. Needs authorization to view, update, and delete individual comment
 
 
 module.exports = router;
