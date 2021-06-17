@@ -7,8 +7,10 @@
     <h2 class="dash-p-c">My Posts</h2>
     {{#each posts as |post| }} <!-- Displays all user posts -->
     {{#each posts}}
-    {{> view-posts-partials }}   
-    <a href="/dash/update/{{id}}" class="waves-effect waves-light btn-small grey lighten-4 black-text">Edit</a>
+    <div class="btn-container">
+        <a href="/dash/update/{{id}}" class="waves-effect waves-light btn-small grey lighten-4 black-text">Edit</a>
+    </div>
+    {{> view-posts-partials }}  
     {{/each}}
     {{/each}}
 
