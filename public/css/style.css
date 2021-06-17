@@ -42,6 +42,12 @@ nav {
     margin: 2rem; 
 }
 
+.single-container {
+    padding-top: 150px; /* Need media query for this for lg screens */
+    padding-bottom: 100px;
+    margin: 2rem; 
+}
+
 .firstnav {
     margin-top: 30%;
 }
@@ -200,11 +206,6 @@ a.postBtn:hover {
 }
 
 /**** Single post styles ****/
-.single-container {
-    padding-top: 150px; /* Need media query for this for lg screens */
-    padding-bottom: 100px;
-    margin: 2rem; 
-}
 
 .time {
     padding-bottom: 10%;
