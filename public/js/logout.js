@@ -15,3 +15,4 @@ const userLogOut = async () => {
 }
 
 $("#logOutBtn").on('click', userLogOut) // Logging out
+$("#logOutBtn2").on('click', userLogOut)
