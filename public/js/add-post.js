@@ -22,7 +22,7 @@ $("#submitPost").on('click', async (e) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dash');
     } else {
       alert("Post could not be created.");
     } 

@@ -20,7 +20,7 @@ $("#updatePost").on('click', async (e) => {
             }
         })
         if (response.ok) {
-            document.location.replace(`/post/${postID}`); // Redirects to the post after successful response
+            document.location.replace(`/dash`); // Redirects to the dash after successful response
         } else {
             alert('Could not update the post!')
         }
