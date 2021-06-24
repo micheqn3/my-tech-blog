@@ -5,6 +5,13 @@ This repository contains a content management system blog site where developers 
 on other developers' posts as well. The application is structured using the MVC paradigm and uses sequelize as the ORM, 
 handlebars.js as the template engine, express-session for authentication, and bcrypt for hashing passwords.
 
+This application allows the user to perform RESTful CRUD Operations including: 
+
+- Creating posts and comments 
+- Reading other users' posts and comments 
+- Updating posts and comments 
+- Deleting posts and comments 
+
 ### Link to deployed application
 
 https://my-tech-blog-micheqn3.herokuapp.com/
