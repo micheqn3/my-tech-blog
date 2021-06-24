@@ -30,8 +30,6 @@ https://my-tech-blog-micheqn3.herokuapp.com/
 6. View the application in the browser as it is hosted locally
 > `http://localhost:3001/`
 
-### This repository contains: 
-
 ### Technologies/Languages used: 
 
   - JavaScript
